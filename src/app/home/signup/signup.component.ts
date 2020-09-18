@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../models/user'
+import { FormBuilder } from '@angular/forms'
 
 @Component({
   selector: 'app-signup',
@@ -7,12 +7,12 @@ import { User } from '../../models/user'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  user: User = {
-    name: '',
-    password: ''
-  };
+  signupform = this.fb.group({
+    username: [''],
+    password: ['']
+  });
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }

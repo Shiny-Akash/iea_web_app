@@ -1,31 +1,15 @@
-<div class="container">
-    <h2>Signup Form</h2>
-    <form (ngSubmit)="onSubmit()" #signupform="ngForm">
-      <div class="form-group">
-        <label for="name">Username</label><br>
-        <input type="text" class="form-control" id="name"
-               required autocomplete="username"
-               [(ngModel)]="user.name" name="name"
-               #name="ngModel">
-        <div [hidden]="name.valid || name.pristine"
-             class="alert alert-danger">
-          Username is required
-        </div>
-      </div>
+<form [formGroup]="signupform" (ngSubmit)='onSubmit()'>
+  
+  <label>
+    Username :
+    <input type="text" formControlName="username">
+  </label> <br>
 
-      <div class="form-group">
-        <label for="password">New Password: </label><br>
-        <input type="password" class="form-control" id="password"
-               required autocomplete="new-password"
-               [(ngModel)]="user.password" name="password" 
-               #password="ngModel">
-        <div [hidden]="password.valid || password.pristine"
-              class="alert alert-danger">
-          Password is required
-        </div>
-      </div>
+  <label>
+    New Password :
+    <input type="text" formControlName="password">
+  </label> <br>
 
-      <button type="submit" class="btn btn-success" [disabled]="!signupform.form.valid">Submit</button>
-    </form>
+  <button type="submit">done</button>
 
-</div>
+</form>

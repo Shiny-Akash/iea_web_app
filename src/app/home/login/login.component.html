@@ -1,31 +1,15 @@
-<div class="container">
-      <h2>Login Form</h2>
-      <form (ngSubmit)="onSubmit()" #loginform="ngForm">
-        <div class="form-group">
-          <label for="name">Username</label><br>
-          <input type="text" class="form-control" id="name"
-                 required autocomplete="username" placeholder="enter your email or phone number"
-                 [(ngModel)]="user.name" name="name"
-                 #name="ngModel">
-          <div [hidden]="name.valid || name.pristine"
-               class="alert alert-danger">
-            Username is required
-          </div>
-        </div>
+<form [formGroup]="loginform" (ngSubmit)='onSubmit()'>
   
-        <div class="form-group">
-          <label for="password">Password: </label><br>
-          <input type="password" class="form-control" id="password"
-                 required autocomplete="current-password"
-                 [(ngModel)]="user.password" name="password" 
-                 #password="ngModel">
-          <div [hidden]="password.valid || password.pristine"
-                class="alert alert-danger">
-            Password is required
-          </div>
-        </div>
-  
-        <button type="submit" class="btn btn-success" [disabled]="!loginform.form.valid">Submit</button>
-      </form>
-  
-  </div>
+  <label>
+    Username :
+    <input type="text" formControlName="username">
+  </label> <br>
+
+  <label>
+    Password :
+    <input type="text" formControlName="password">
+  </label> <br>
+
+  <button type="submit">Submit</button>
+
+</form>
