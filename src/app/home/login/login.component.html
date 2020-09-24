@@ -1,16 +1,26 @@
 <form [formGroup]="loginform" (ngSubmit)='onSubmit()'>
   
   <label>
-    Username :
-    <input type="text" formControlName="username">
+    E-Mail ID :
+    <input type="text" formControlName="username" placeholder="email">
+    <span [hidden]='!(loginform.controls.username.invalid && 
+    (loginform.controls.username.touched || loginform.controls.username.dirty))'
+    class='invalid-message'>
+      email is invalid
+    </span>
   </label> <br>
 
   <label>
     Password :
-    <input type="text" formControlName="password">
+    <input type="password" formControlName="password">
+    <span [hidden]='!(loginform.controls.password.invalid &&
+    (loginform.controls.password.touched || loginform.controls.password.dirty))'
+    class='invalid-message'>
+      password should be atleast 3 characters
+    </span>
   </label> <br>
 
-  <button type="submit">Submit</button>
+  <button type="submit" [disabled]='loginform.invalid'>Submit</button>
   <div>
     <span>Don't have an account !  </span>
   <a routerLink='../signup'>SignUp</a>

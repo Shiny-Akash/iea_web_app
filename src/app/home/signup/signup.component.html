@@ -3,34 +3,34 @@
   <label>
     E-Mail ID :
     <input type="text" formControlName="username" placeholder="email">
-    <div [hidden]='!(signupform.controls.username.invalid && 
+    <span [hidden]='!(signupform.controls.username.invalid && 
     (signupform.controls.username.touched || signupform.controls.username.dirty))'
     class='invalid-message'>
       email is invalid
-    </div>
+    </span>
   </label> <br>
 
   <label>
     New Password :
     <input type="password" formControlName="password">
-    <div [hidden]='!(signupform.controls.password.invalid &&
+    <span [hidden]='!(signupform.controls.password.invalid &&
     (signupform.controls.password.touched || signupform.controls.password.dirty))'
     class='invalid-message'>
       password should be atleast 3 characters
-    </div>
+    </span>
   </label> <br>
 
   <label>
     Confirm Password :
     <input type="password" formControlName="confpassword">
-    <div [hidden]='!(signupform.controls.confpassword.invalid && 
+    <span [hidden]='!(signupform.controls.confpassword.invalid && 
     (signupform.controls.confpassword.touched || signupform.controls.confpassword.dirty))' 
     class='invalid-message'>
       password should be atleast 3 characters
-    </div>
-    <div [hidden]='!signupform.errors?.passwordMisMatch' class='invalid-message'>
-      passwords doesn't match
-    </div>
+    </span>
+    <span [hidden]='!signupform.errors?.passwordMisMatch' class='invalid-message'>
+      <br *ngIf='signupform.controls.confpassword.errors?.minlength'>passwords doesn't match
+    </span>
   </label> <br>
 
   <button type="submit" [disabled]='signupform.invalid'>Create Account</button>
