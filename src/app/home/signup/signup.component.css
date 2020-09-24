@@ -1,0 +1,8 @@
+.invalid-message {
+    background-color: rgb(230, 81, 81);
+    width: fit-content;
+}
+
+a {
+    text-decoration: none;
+}
