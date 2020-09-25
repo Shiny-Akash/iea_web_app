@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ValidatorFn, Validators, ValidationErrors } from '@angular/forms';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup, ValidatorFn, Validators, ValidationErrors } fro
 export class SignupComponent implements OnInit {
   public signupform: FormGroup;
 
-  constructor() { }
+  constructor(private userservice:UserService) { }
 
   ngOnInit(): void {
     this.signupform = new FormGroup({
@@ -20,7 +21,7 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    alert('signup form submitted');
+    this.userservice.addUser(this.signupform.value);
   }
 
   confirmPassword: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
