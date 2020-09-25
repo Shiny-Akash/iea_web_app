@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { USERS } from '../_models/dummyUserData';
 
 @Injectable({
@@ -6,7 +7,7 @@ import { USERS } from '../_models/dummyUserData';
 })
 export class UserService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   addUser(user):void{
     let found = USERS.find(x => x.username == user.username && x.password == user.password);
@@ -18,6 +19,17 @@ export class UserService {
     else{
       alert('user already exists');
       return
+    }
+  }
+
+  getUser(user):void{
+    let found = USERS.find(x => x.username == user.username && x.password == user.password);
+    if (!found){
+      alert('user not found');
+      return
+    }
+    else{
+      this.router.navigate(['../user']);
     }
   }
 }
