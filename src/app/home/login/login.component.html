@@ -1,7 +1,7 @@
-<form [formGroup]="loginform" (ngSubmit)='onSubmit()'>
+<form class='box' [formGroup]="loginform" (ngSubmit)='onSubmit()'>
   
   <label>
-    E-Mail ID :
+    <p>E-Mail ID :</p>
     <input type="text" formControlName="username" placeholder="email">
     <span [hidden]='!(loginform.controls.username.invalid && 
     (loginform.controls.username.touched || loginform.controls.username.dirty))'
@@ -20,7 +20,7 @@
     </span>
   </label> <br>
 
-  <button type="submit" [disabled]='loginform.invalid'>Submit</button>
+  <input type="submit" [disabled]='loginform.invalid' value='Login'>
   <div>
     <span>Don't have an account !  </span>
   <a routerLink='../signup'>SignUp</a>
