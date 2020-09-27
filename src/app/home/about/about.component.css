@@ -1,0 +1,13 @@
+.content {
+    background-image: url('https://www.mitindia.edu/Mit_Codes_custom/MIT_banner/img/landscape/03.jpg');
+    height: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about {
+    opacity: 50%;
+    background-color: rgb(8, 181, 187);
+    width: max-content;
+    font-size: 100px;
+}
