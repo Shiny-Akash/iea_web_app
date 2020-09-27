@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent, 
     AboutComponent, 
     HeaderComponent, 
-    SignupComponent
+    SignupComponent, FooterComponent
   ],
   imports: [
     CommonModule,

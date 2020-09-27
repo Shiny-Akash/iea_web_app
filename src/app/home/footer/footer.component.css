@@ -1,0 +1,14 @@
+footer {
+    background-color: rgb(146, 55, 168);
+}
+
+.foot {
+    top: 0%;
+    margin: 0%;
+    border: 0px;
+    padding: 0px;
+    font-style: italic;
+    font-family: Allegro;
+    color: white;
+    text-align: center;
+}
