@@ -10,10 +10,10 @@ export class UserService {
   constructor(private router: Router) { }
 
   addUser(user):void{
-    let found = USERS.find(x => x.username == user.username && x.password == user.password);
+    let found = USERS.find(x => x.username == user.username);
     if (!found){
       USERS.push(user);
-      alert('user added');
+      this.router.navigate(['/user']);
       return 
     }
     else{

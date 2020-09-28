@@ -1,40 +1,37 @@
-<form [formGroup]="signupform" (ngSubmit)='onSubmit()'>
+<form class='box' [formGroup]="signupform" (ngSubmit)='onSubmit()'>
   
-  <label>
-    E-Mail ID :
+  <label>E-Mail ID</label> 
     <input type="text" formControlName="username" placeholder="email">
-    <span [hidden]='!(signupform.controls.username.invalid && 
+    <div [hidden]='!(signupform.controls.username.invalid && 
     (signupform.controls.username.touched || signupform.controls.username.dirty))'
     class='invalid-message'>
       email is invalid
-    </span>
-  </label> <br>
+</div>
+<br>
 
-  <label>
-    New Password :
+  <label>New Password</label> 
     <input type="password" formControlName="password">
-    <span [hidden]='!(signupform.controls.password.invalid &&
+    <div [hidden]='!(signupform.controls.password.invalid &&
     (signupform.controls.password.touched || signupform.controls.password.dirty))'
     class='invalid-message'>
       password should be atleast 3 characters
-    </span>
-  </label> <br>
+</div>
+<br>
 
-  <label>
-    Confirm Password :
+  <label>Confirm Password </label> 
     <input type="password" formControlName="confpassword">
-    <span [hidden]='!(signupform.controls.confpassword.invalid && 
+    <div [hidden]='!(signupform.controls.confpassword.invalid && 
     (signupform.controls.confpassword.touched || signupform.controls.confpassword.dirty))' 
     class='invalid-message'>
       password should be atleast 3 characters
-    </span>
-    <span [hidden]='!signupform.errors?.passwordMisMatch' class='invalid-message'>
-      <br *ngIf='signupform.controls.confpassword.errors?.minlength'>passwords doesn't match
-    </span>
-  </label> <br>
+</div>
+    <div [hidden]='!signupform.errors?.passwordMisMatch' class='invalid-message'>
+    passwords doesn't match
+    </div>
+<br>
 
   <button type="submit" [disabled]='signupform.invalid'>Create Account</button>
-  <div>
+  <div class='bottomline'>
     <span>Already have an account !  </span>
   <a routerLink='../login'>Login</a>
   </div>

@@ -6,9 +6,10 @@ footer {
     top: 0%;
     margin: 0%;
     border: 0px;
-    padding: 0px;
+    padding: 20px;
     font-style: italic;
     font-family: Allegro;
     color: white;
     text-align: center;
+    display: block;
 }

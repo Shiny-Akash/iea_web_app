@@ -26,9 +26,7 @@ export class SignupComponent implements OnInit {
 
   confirmPassword: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
     const firstPassword = control.get('password');
-    const secondPassword = control.get('confpassword');
-    //alert(firstPassword.value + ' ' + secondPassword.value)
-  
+    const secondPassword = control.get('confpassword');  
     return firstPassword && secondPassword && firstPassword.value != secondPassword.value ? {passwordMisMatch: true} : null;
   };
 

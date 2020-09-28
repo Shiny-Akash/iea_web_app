@@ -1,19 +1,25 @@
 a {
     text-decoration: none;
     color: rgb(1, 22, 1);
-    border-radius: 30px;
+    border-radius: 10px;
     margin: 10px;
     padding: 10px;
     background-color: white;
+    padding-bottom: 3px;    
 }
 
 .selected {
-    color: brown;
+    background-color: #34495e;
+    font-size: larger;
 }
 
 .head {
-    background-color: rgb(146, 55, 168);
+    background-color: rgba(25, 88, 69, 0.849);
     font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
 }
 
 h1,h3 {
