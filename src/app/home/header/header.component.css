@@ -11,6 +11,7 @@ a {
 .selected {
     background-color: #34495e;
     font-size: larger;
+    color: white;
 }
 
 .head {

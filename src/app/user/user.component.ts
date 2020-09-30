@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../_models/user';
 
 @Component({
@@ -11,15 +12,20 @@ export class UserComponent implements OnInit {
     username: '',
     password: ''
   };
+  nouserfound = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.user.username = localStorage.getItem('username');
     this.user.password = localStorage.getItem('password');
+    if (!this.user.username) {
+      this.router.navigate(['/home/login']);
+    }
   }
 
   logout(): void {
-    alert("loggin out");
+    localStorage.clear();
+    this.router.navigate(['/home/about']);
   }
 }
