@@ -13,7 +13,7 @@ export class UserService {
     let found = USERS.find(x => x.username == user.username);
     if (!found){
       USERS.push(user);
-      this.router.navigate(['/user']);
+      this.getUser(user);
       return 
     }
     else{
@@ -29,6 +29,9 @@ export class UserService {
       return
     }
     else{
+      //save the user credentials for this session
+      localStorage.setItem('username', user.username);
+      localStorage.setItem('password', user.password)
       this.router.navigate(['../user']);
     }
   }
