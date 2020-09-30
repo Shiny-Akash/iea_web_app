@@ -20,6 +20,9 @@ a {
 .box {
 	padding:40px;
     background:#34495e;
+    height: 500px;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 .box input[type="text"],.box input[type="password"] {

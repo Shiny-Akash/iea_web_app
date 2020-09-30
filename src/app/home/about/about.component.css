@@ -3,11 +3,5 @@
     height: 1000px;
     background-repeat: no-repeat;
     background-size: cover;
-}
 
-.about {
-    opacity: 50%;
-    background-color: rgb(8, 181, 187);
-    width: max-content;
-    font-size: 100px;
 }
