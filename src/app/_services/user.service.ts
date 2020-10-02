@@ -13,6 +13,7 @@ export class UserService {
     let found = USERS.find(x => x.username == user.username);
     if (!found){
       USERS.push(user);
+      alert('successfully signed up !');
       this.getUser(user);
       return 
     }
