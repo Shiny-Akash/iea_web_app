@@ -38,9 +38,9 @@ h1,h3 {
 .logo {
     height: 100px;
     width: 100px;
-    display: inline;
     float: left;
     overflow: hidden;
-    padding-left: 500px;
-    padding-right: 40px;
+    margin-left: 500px;
+    margin-right: 40px;
+    box-shadow: 0px 0px 20px 6px #499647;
 }
