@@ -1,21 +1,21 @@
 <form class='box' [formGroup]="loginform" (ngSubmit)='onSubmit()'>
   
-  <label>E-Mail ID</label> 
-    <input type="text" formControlName="username" placeholder="email">
-    <div [hidden]='!(loginform.controls.username.invalid && 
+  <label>Username</label> 
+    <input type="text" formControlName="username" placeholder="username" autocomplete="username">
+    <div [hidden]='!(loginform.controls.username.invalid &&
     (loginform.controls.username.touched || loginform.controls.username.dirty))'
     class='invalid-message'>
-      email is invalid
+      Username should be atleast 5 characters
 </div>
     <br>
 
   <label>
     Password  </label> 
-    <input type="password" formControlName="password">
+    <input type="password" formControlName="password" autocomplete="current-password">
     <div [hidden]='!(loginform.controls.password.invalid &&
     (loginform.controls.password.touched || loginform.controls.password.dirty))'
     class='invalid-message'>
-      password should be atleast 3 characters
+      password should be atleast 8 characters
   </div>
 <br>
 

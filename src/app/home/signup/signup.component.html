@@ -1,29 +1,29 @@
 <form class='box' [formGroup]="signupform" (ngSubmit)='onSubmit()'>
   
-  <label>E-Mail ID</label> 
-    <input type="text" formControlName="username" placeholder="email">
+  <label>Username</label> 
+    <input type="text" formControlName="username" placeholder="email" autocomplete="username">
     <div [hidden]='!(signupform.controls.username.invalid && 
     (signupform.controls.username.touched || signupform.controls.username.dirty))'
     class='invalid-message'>
-      email is invalid
+      Username should be atleast 5 characters
 </div>
 <br>
 
   <label>New Password</label> 
-    <input type="password" formControlName="password">
+    <input type="password" formControlName="password" autocomplete="new-password">
     <div [hidden]='!(signupform.controls.password.invalid &&
     (signupform.controls.password.touched || signupform.controls.password.dirty))'
     class='invalid-message'>
-      password should be atleast 3 characters
+      password should be atleast 8 characters
 </div>
 <br>
 
   <label>Confirm Password </label> 
-    <input type="password" formControlName="confpassword">
+    <input type="password" formControlName="confpassword" autocomplete="new-password">
     <div [hidden]='!(signupform.controls.confpassword.invalid && 
     (signupform.controls.confpassword.touched || signupform.controls.confpassword.dirty))' 
     class='invalid-message'>
-      password should be atleast 3 characters
+      password should be atleast 8 characters
 </div>
     <div [hidden]='!signupform.errors?.passwordMisMatch' class='invalid-message'>
     passwords doesn't match

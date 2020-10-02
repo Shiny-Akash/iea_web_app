@@ -14,12 +14,15 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginform = new FormGroup({
-      username: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(3)])
+      username: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)])
     })
   }
 
   onSubmit(){
-    this.userservice.getUser(this.loginform.value);
+    this.userservice.getUser(this.loginform.value).subscribe({
+      next: data => {alert(data.message);},
+      error: err => {alert(err.error.message);}
+    })
   }
 }
