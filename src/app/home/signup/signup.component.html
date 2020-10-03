@@ -1,7 +1,7 @@
 <form class='box' [formGroup]="signupform" (ngSubmit)='onSubmit()'>
   
   <label>Username</label> 
-    <input type="text" formControlName="username" placeholder="email" autocomplete="username">
+    <input type="text" formControlName="username" placeholder="username" autocomplete="username">
     <div [hidden]='!(signupform.controls.username.invalid && 
     (signupform.controls.username.touched || signupform.controls.username.dirty))'
     class='invalid-message'>

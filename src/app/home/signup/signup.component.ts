@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ValidatorFn, Validators, ValidationErrors } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/_services/user.service';
 
 @Component({
@@ -10,7 +11,10 @@ import { UserService } from 'src/app/_services/user.service';
 export class SignupComponent implements OnInit {
   public signupform: FormGroup;
 
-  constructor(private userservice:UserService) { }
+  constructor(
+    private router: Router,
+    private userservice: UserService
+  ) { }
 
   ngOnInit(): void {
     this.signupform = new FormGroup({
@@ -22,7 +26,12 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     this.userservice.addUser(this.signupform.value).subscribe({
-      next: data => {alert(data._id);},
+      next: data => {
+        localStorage.setItem('username', data.username);
+        localStorage.setItem('password', data.password);
+        alert('signup successful!!');
+        this.router.navigate(['../user']);
+      },
       error: error => alert(error.error.message)
     })
   }
