@@ -1,7 +1,31 @@
+@import "../../../../node_modules/bootstrap/dist/css/bootstrap.css";
+
+
 .content {
     background-image: url('https://www.mitindia.edu/Mit_Codes_custom/MIT_banner/img/landscape/03.jpg');
-    height: 1000px;
+    height: 900px;
     background-repeat: no-repeat;
     background-size: cover;
+}
 
+font-body{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+}
+
+.para {
+    margin: 20px;
+    background-color: rgba(155, 196, 231, 0.589);
+    padding: 20px;
+    color: black;
+    border-radius: 30px;
+}
+
+.left{
+    float:left;
+}
+
+.right{
+    float:right;
 }
