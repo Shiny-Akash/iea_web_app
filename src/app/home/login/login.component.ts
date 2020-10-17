@@ -24,14 +24,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.userservice.getUser(this.loginform.value).subscribe({
+    this.userservice.loginUser(this.loginform.value).subscribe({
+      error: err => alert(err.error.message),
       next: data => {
-        localStorage.setItem('username', data.username);
-        localStorage.setItem('password', data.password);
-        alert('login successful !!');
-        this.router.navigate(['../user']);
-      },
-      error: err => {alert(err.error.message);}
+        alert('login successful !');
+        localStorage.setItem('token', data.token);
+        this.router.navigate([`/${data.username}`]);
+      }
     })
   }
 }

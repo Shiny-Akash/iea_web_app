@@ -26,19 +26,17 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     this.userservice.addUser(this.signupform.value).subscribe({
-      next: data => {
-        localStorage.setItem('username', data.username);
-        localStorage.setItem('password', data.password);
-        alert('signup successful!!');
-        this.router.navigate(['../user']);
-      },
-      error: error => alert(error.error.message)
+      error: error => alert(error.error.message),
+      next: () => {
+        alert('Signup successful!! Please login ');
+        this.router.navigate(['/home/login']);
+      }
     })
   }
 
   confirmPassword: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
-    const firstPassword = control.get('password');
-    const secondPassword = control.get('confpassword');  
+    let firstPassword = control.get('password');
+    let secondPassword = control.get('confpassword');  
     return firstPassword && secondPassword && firstPassword.value != secondPassword.value ? {passwordMisMatch: true} : null;
   };
 
