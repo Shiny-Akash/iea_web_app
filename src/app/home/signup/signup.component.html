@@ -5,7 +5,7 @@
     <div [hidden]='!(signupform.controls.username.invalid && 
     (signupform.controls.username.touched || signupform.controls.username.dirty))'
     class='invalid-message'>
-      Username should be atleast 5 characters
+      Username should be atleast 1 characters
 </div>
 <br>
 
@@ -14,7 +14,7 @@
     <div [hidden]='!(signupform.controls.password.invalid &&
     (signupform.controls.password.touched || signupform.controls.password.dirty))'
     class='invalid-message'>
-      password should be atleast 8 characters
+      password should be atleast 3 characters
 </div>
 <br>
 
@@ -23,7 +23,7 @@
     <div [hidden]='!(signupform.controls.confpassword.invalid && 
     (signupform.controls.confpassword.touched || signupform.controls.confpassword.dirty))' 
     class='invalid-message'>
-      password should be atleast 8 characters
+      password should be atleast 3 characters
 </div>
     <div [hidden]='!signupform.errors?.passwordMisMatch' class='invalid-message'>
     passwords doesn't match
