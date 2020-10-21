@@ -1,39 +1,54 @@
-<form class='box' [formGroup]="signupform" (ngSubmit)='onSubmit()'>
-  
-  <label>Username</label> 
-    <input type="text" formControlName="username" placeholder="username" autocomplete="username">
-    <div [hidden]='!(signupform.controls.username.invalid && 
-    (signupform.controls.username.touched || signupform.controls.username.dirty))'
-    class='invalid-message'>
-      Username should be atleast 1 characters
-</div>
-<br>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-signin flex-row my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center"><b>Register</b></h5>
+          <form class="form-signin" [formGroup]="signupform" (ngSubmit)='onSubmit()'>
+            <div class="form-label-group">
+              
+              <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus 
+              formControlName="username" autocomplete="username">
+              <label for="inputUsername">Username</label>
+              <div [hidden]='!(signupform.controls.username.invalid && 
+                  (signupform.controls.username.touched || signupform.controls.username.dirty))'
+                  class='invalid-message'>
+                    Username should be atleast 1 characters
+              </div>
+            </div>
 
-  <label>New Password</label> 
-    <input type="password" formControlName="password" autocomplete="new-password">
-    <div [hidden]='!(signupform.controls.password.invalid &&
-    (signupform.controls.password.touched || signupform.controls.password.dirty))'
-    class='invalid-message'>
-      password should be atleast 3 characters
-</div>
-<br>
+            <div class="form-label-group">
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required
+              formControlName="password" autocomplete="new-password">
+              <label for="inputPassword">Password</label>
+              <div [hidden]='!(signupform.controls.password.invalid &&
+                  (signupform.controls.password.touched || signupform.controls.password.dirty))'
+                  class='invalid-message'>
+                    password should be atleast 3 characters
+              </div>
+            </div>
+            
+            <div class="form-label-group">
+              <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required
+              formControlName="confpassword" autocomplete="new-password">
+              <label for="inputConfirmPassword">Confirm password</label>
+              <div [hidden]='!(signupform.controls.confpassword.invalid && 
+                  (signupform.controls.confpassword.touched || signupform.controls.confpassword.dirty))' 
+                  class='invalid-message'>
+                    password should be atleast 3 characters
+              </div>
+            <div [hidden]='!signupform.errors?.passwordMisMatch' class='invalid-message'>
+                    passwords doesn't match
+            </div>
+            </div>
 
-  <label>Confirm Password </label> 
-    <input type="password" formControlName="confpassword" autocomplete="new-password">
-    <div [hidden]='!(signupform.controls.confpassword.invalid && 
-    (signupform.controls.confpassword.touched || signupform.controls.confpassword.dirty))' 
-    class='invalid-message'>
-      password should be atleast 3 characters
-</div>
-    <div [hidden]='!signupform.errors?.passwordMisMatch' class='invalid-message'>
-    passwords doesn't match
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" [disabled]='signupform.invalid'>
+              Register
+            </button>
+            <a class="d-block text-center mt-2 small" routerLink="../Login">Already have an account? Login here</a>
+          </form>
+        </div>
+      </div>
     </div>
-<br>
-
-  <button type="submit" [disabled]='signupform.invalid'>Create Account</button>
-  <div class='bottomline'>
-    <span>Already have an account !  </span>
-  <a routerLink='../login'>Login</a>
   </div>
-
-</form>
+</div>

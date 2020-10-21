@@ -7,9 +7,10 @@
             <form class="form-signin" [formGroup]="loginform" (ngSubmit)="onSubmit()">
               
               <div class="form-label-group">
-                <input type="email" id="inputUsername" class="form-control" placeholder="Username" formControlName="username" autocomplete="username" required >
+                <input type="text" id="inputUsername" class="form-control" placeholder="Username" formControlName="username" autocomplete="username" required >
                 <label for="inputUsername">Username</label>
-                <div [hidden]='!(loginform.controls.username.invalid && (loginform.controls.username.touched || loginform.controls.username.dirty))'>
+                <div [hidden]='!(loginform.controls.username.invalid && (loginform.controls.username.touched || loginform.controls.username.dirty))'
+                class="invalid-message">
                       Username should be atleast 1 characters
                 </div>
               </div>
@@ -17,15 +18,18 @@
               <div class="form-label-group">
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password" autocomplete="current-password" required>
                 <label for="inputPassword">Password</label>
-                <div [hidden]='!(loginform.controls.password.invalid && (loginform.controls.password.touched || loginform.controls.password.dirty))'>
+                <div [hidden]='!(loginform.controls.password.invalid && (loginform.controls.password.touched || loginform.controls.password.dirty))'
+                  class="invalid-message">
                     Password should be atleast 3 characters
                 </div>
               </div>
               
+              <!--
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="gridCheck1">
                 <label class="form-check-label" for="gridCheck1" style="padding-left: .5rem;">Remember me</label>
               </div>
+              -->
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" [disabled]='loginform.invalid'>Login</button>
               <a class="d-block text-center mt-2 small" routerLink="../signup">Don't have an account? Sign Up here</a>
