@@ -10,6 +10,7 @@ import { UserService } from 'src/app/_services/user.service';
 })
 export class LoginComponent implements OnInit {
   public loginform: FormGroup;
+  rememberme: boolean = true;
 
   constructor(
     private router: Router,
@@ -28,9 +29,13 @@ export class LoginComponent implements OnInit {
       error: err => alert(err.error.message),
       next: data => {
         alert('login successful !');
-        localStorage.setItem('token', data.token);
+        if (!this.rememberme)
+          sessionStorage.setItem('token', data.token);
+        else
+          localStorage.setItem('token', data.token);
         this.router.navigate([`/${data.username}`]);
       }
     })
   }
+
 }

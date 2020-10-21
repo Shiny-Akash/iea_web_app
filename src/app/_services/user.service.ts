@@ -20,7 +20,10 @@ export class UserService {
   }
 
   getUser(userid):Observable<any>{
-    let token = localStorage.getItem('token')
+    var token;
+    token = sessionStorage.getItem('token')
+    if (!token) 
+      token = localStorage.getItem('token')
     return this.http.get(this.userUrl + `${userid}`, {headers: { Authorization: `Bearer ${token}`}})
   }
 }
