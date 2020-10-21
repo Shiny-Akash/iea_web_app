@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     let userid = ''
-    this.route.params.subscribe( params => userid = params.userid )
+    this.route.params.subscribe( params => userid = params.username )
     console.log(userid)
     this.userservice.getUser(userid).subscribe({
       error: () => this.router.navigate(['/home/login']),

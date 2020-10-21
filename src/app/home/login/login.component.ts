@@ -29,10 +29,13 @@ export class LoginComponent implements OnInit {
       error: err => alert(err.error.message),
       next: data => {
         alert('login successful !');
-        if (!this.rememberme)
+        if (!this.rememberme) {
           sessionStorage.setItem('token', data.token);
-        else
+          sessionStorage.setItem('username', this.loginform.controls.username.value)
+        } else {
           localStorage.setItem('token', data.token);
+          localStorage.setItem('username', this.loginform.controls.username.value)
+        }
         this.router.navigate([`/${data.username}`]);
       }
     })
