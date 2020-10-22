@@ -1,15 +1,12 @@
 footer {
-    background-color: rgb(100, 194, 150);
-}
-
-.foot,h1 {
-    top: 0%;
-    margin: 0%;
-    border: 0px;
-    padding: 20px;
-    font-style: italic;
-    font-family: Allegro;
-    color: white;
-    text-align: center;
-    display: block;
-}
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+  
+  footer, footer li a, footer a {
+    color: whitesmoke;
+    background-color: rgba(3, 3, 122, 0.986);
+  }
