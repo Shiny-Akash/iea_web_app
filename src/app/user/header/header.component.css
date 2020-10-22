@@ -1,0 +1,10 @@
+.navbar-default{
+    background-color: rgba(9, 9, 134, 0.986);
+}
+
+.nav.navbar-nav li a {
+  font-size: 15px;
+  color: whitesmoke;
+  padding-right: 0.7rem;
+  padding-bottom: 0rem;
+}

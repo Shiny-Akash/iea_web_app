@@ -1,0 +1,12 @@
+footer {
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+  
+  footer, footer li a, footer a {
+    color: whitesmoke;
+    background-color: rgba(3, 3, 122, 0.986);
+  }
