@@ -8,7 +8,6 @@ import { UserService } from '../_services/user.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  accountDetails = {}
 
   constructor(
     private router: Router,
@@ -17,13 +16,7 @@ export class UserComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let userid = ''
-    this.route.params.subscribe( params => userid = params.username )
-    console.log(userid)
-    this.userservice.getUser(userid).subscribe({
-      error: () => this.router.navigate(['/home/login']),
-      next: data => this.accountDetails = data
-    })
+    
   }
 
   logout(): void {
