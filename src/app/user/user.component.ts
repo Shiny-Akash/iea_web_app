@@ -10,17 +10,10 @@ import { UserService } from '../_services/user.service';
 export class UserComponent implements OnInit {
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private userservice: UserService,
   ) { }
 
   ngOnInit(): void {
     
   }
 
-  logout(): void {
-    localStorage.clear();
-    this.router.navigate(['/home/about']);
-  }
 }
