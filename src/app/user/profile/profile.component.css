@@ -6,3 +6,9 @@ input, label {
     padding-right: 1.3rem;
     padding-left: 1rem;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

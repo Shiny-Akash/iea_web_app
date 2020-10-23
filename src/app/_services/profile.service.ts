@@ -18,4 +18,8 @@ export class ProfileService {
   getProfile(username): Observable<any> {
     return this.http.get(this.baseProfileUrl + username, {headers: {Authorization: `Bearer ${this.token}`}})
   }
+
+  updateProfile(username, profile) {
+    return this.http.post(this.baseProfileUrl + username, {profile} , {headers: {Authorization: `Bearer ${this.token}`}})
+  }
 }

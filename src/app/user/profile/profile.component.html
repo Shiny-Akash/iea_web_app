@@ -1,21 +1,11 @@
-<div class="container">
-  <!--
-    <div class="row">
-      <div class="col-sm-2">
-        <label for="Username">Username </label>
-      </div>
-      <div class="col-sm-4">
-        <input type="text" name="Username" id="Username">
-      </div>
-    </div>
-  -->
+<form class="container" [formGroup]="profileform" (ngSubmit)="onSubmit()">
   
     <div class="row">
       <div class="col-sm-2">
         <label for="Firstname">Firstname </label>
       </div>
       <div class="col-sm-4">
-        <input type="text" name="Firstname" id="Firstname">
+        <input type="text" name="Firstname" id="Firstname" formControlName="firstname">
       </div>
     </div>
   
@@ -24,24 +14,22 @@
         <label for="Lastname">Lastname </label>
       </div>
       <div class="col-sm-4">
-        <input type="text" name="Lastname" id="Lastname">
+        <input type="text" name="Lastname" id="Lastname" formControlName="lastname">
       </div>
     </div>
   
     <div class="row">
-      
       <div class="col-sm-2">
         <label for="Phone">Phone number </label>
       </div>
       <div class="col-sm-3">
-        <input type="text" name="Phone" id="Phone">
+        <input type="number" name="Phone" id="Phone" formControlName="phoneno">
       </div>
     <!--
       <div class="col-sm-2">
         <button type="submit" class="btn btn-warning btn-sm">Verify Phone</button>
       </div>
     -->
-    
     </div>
 
     <div class="row">
@@ -50,7 +38,7 @@
         <label for="Email">Email </label>
       </div>
       <div class="col-sm-3">
-        <input type="text" name="Email" id="Email">
+        <input type="text" name="Email" id="Email" formControlName="emailid">
       </div>
       <div class="col-sm-2">
         <button type="submit" class="btn btn-warning btn-sm">Verify Email</button>
@@ -77,7 +65,7 @@
   -->
   
     <div class="row">
-      <button type="button" class="btn btn-primary btn-lg btn-block">Update</button>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Update</button>
     </div>  
   
-  </div>
+</form>
