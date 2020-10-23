@@ -31,8 +31,12 @@ export class ProfileComponent implements OnInit {
       }
     })
     this.profileService.getProfile(username).subscribe({
-      error: (err) => console.log(err),
-      next: (data) => console.log(data.profile)
+      error: (err) => {
+        alert('session expired');
+      },
+      next: (data) => {
+        this.profileform.patchValue(data.profile)
+      }
     })
   }
 
