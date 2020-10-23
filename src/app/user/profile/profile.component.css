@@ -1,4 +1,8 @@
 .row {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 1rem;
+}
+
+input, label {
+    padding-right: 1.3rem;
+    padding-left: 1rem;
 }
