@@ -26,6 +26,9 @@ export class HeaderComponent implements OnInit {
     this.profileService.getProfile(username).subscribe({
       error: (err) => {
         this.logout();
+      },
+      next: (data) => {
+        console.log(JSON.stringify(data))
       }
     })
   }

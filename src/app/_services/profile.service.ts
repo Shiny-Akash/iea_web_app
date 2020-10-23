@@ -11,15 +11,15 @@ export class ProfileService {
 
   constructor(
     private http: HttpClient
-  ) { 
-    this.token = localStorage.getItem('token')
-  }
+  ) { }
 
   getProfile(username): Observable<any> {
+    this.token = localStorage.getItem('token')
     return this.http.get(this.baseProfileUrl + username, {headers: {Authorization: `Bearer ${this.token}`}})
   }
 
   updateProfile(username, profile) {
+    this.token = localStorage.getItem('token')
     return this.http.post(this.baseProfileUrl + username, {profile} , {headers: {Authorization: `Bearer ${this.token}`}})
   }
 }

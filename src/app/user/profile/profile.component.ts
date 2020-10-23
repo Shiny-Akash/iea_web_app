@@ -59,4 +59,9 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  verifyEmail() {
+    let emailid = this.profileform.controls.emailid.value;
+    console.log(emailid)
+  }
+
 }
