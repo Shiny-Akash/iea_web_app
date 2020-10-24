@@ -75,4 +75,21 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  onEmailChange() {
+    this.emailVerified = false;
+    let username = ''
+    this.route.parent.params.subscribe({
+      next: (params) => {
+        username = params.username;
+      }
+    })
+    this.profileService.updateProfile(username, { emailVerificationDone: this.emailVerified, emailid: this.profileform.controls.emailid.value }).subscribe({
+      error: (err) => {
+        alert(JSON.stringify(err));
+      },
+      next: (data) => {
+        alert('Email has been changed verify again !')
+      }
+    })
+  }
 }

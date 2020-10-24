@@ -42,7 +42,7 @@
         <label for="Email">Email </label>
       </div>
       <div class="col-sm-3">
-        <input type="email" name="Email" id="Email" formControlName="emailid">
+        <input type="email" name="Email" id="Email" formControlName="emailid" (change)="onEmailChange()">
         <div [hidden]='!(profileform.controls.emailid.invalid && (profileform.controls.emailid.touched || profileform.controls.emailid.dirty))'
                   class="invalid-message">
                     Should be a valid Email ID
