@@ -48,7 +48,7 @@
                     Should be a valid Email ID
         </div>
       </div>
-      <div class="col-sm-2">
+      <div class="col-sm-2" [hidden]="emailVerified">
         <input type="button" class="btn btn-warning btn-sm" (click)="verifyEmail()" value="VERIFY EMAIL" [disabled]="!profileform.controls.emailid.value || profileform.controls.emailid.invalid">
       </div>
       

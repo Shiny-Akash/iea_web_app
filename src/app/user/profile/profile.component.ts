@@ -10,6 +10,7 @@ import { ProfileService } from 'src/app/_services/profile.service';
 })
 export class ProfileComponent implements OnInit {
   profileform: FormGroup;
+  emailVerified: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -37,7 +38,8 @@ export class ProfileComponent implements OnInit {
         this.router.navigate(['/home'])
       },
       next: (data) => {
-        this.profileform.patchValue(data.profile)
+        this.profileform.patchValue(data.profile);
+        this.emailVerified = data.profile.emailVerificationDone;
       }
     })
   }
@@ -61,7 +63,16 @@ export class ProfileComponent implements OnInit {
 
   verifyEmail() {
     let emailid = this.profileform.controls.emailid.value;
-    console.log(emailid)
+    let username = ''
+    this.route.parent.params.subscribe({
+      next: (params) => {
+        username = params.username;
+      }
+    })
+    this.profileService.sendVerificationEmail({username, emailid}).subscribe({
+      next: () => alert('Verification Mail has been sent to your Mail ID ! Check your mail for further Verification process'),
+      error: (err) => alert(err.error.message)
+    })
   }
 
 }

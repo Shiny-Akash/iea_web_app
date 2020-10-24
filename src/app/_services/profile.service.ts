@@ -22,4 +22,8 @@ export class ProfileService {
     this.token = localStorage.getItem('token')
     return this.http.post(this.baseProfileUrl + username, {profile} , {headers: {Authorization: `Bearer ${this.token}`}})
   }
+
+  sendVerificationEmail(body) {
+    return this.http.post("http://localhost:8080/api/mail/send/"+body.username, { emailid: body.emailid }, {headers: {Authorization: `Bearer ${this.token}`}})
+  }
 }
