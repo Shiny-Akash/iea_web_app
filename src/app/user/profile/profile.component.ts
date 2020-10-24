@@ -19,8 +19,8 @@ export class ProfileComponent implements OnInit {
     this.profileform = new FormGroup({
       firstname: new FormControl(''),
       lastname: new FormControl(''),
-      phoneno: new FormControl(''),
-      emailid: new FormControl(''),
+      phoneno: new FormControl('', [Validators.pattern('[0-9]{10}')]),
+      emailid: new FormControl('', [Validators.email]),
     })
   }
 

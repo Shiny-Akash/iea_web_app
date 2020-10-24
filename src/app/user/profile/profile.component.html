@@ -24,6 +24,10 @@
       </div>
       <div class="col-sm-3">
         <input type="number" name="Phone" id="Phone" formControlName="phoneno">
+        <div [hidden]='!(profileform.controls.phoneno.invalid && (profileform.controls.phoneno.touched || profileform.controls.phoneno.dirty))'
+                  class="invalid-message">
+                    Should be a valid Phone Number 
+        </div>
       </div>
     <!--
       <div class="col-sm-2">
@@ -38,10 +42,14 @@
         <label for="Email">Email </label>
       </div>
       <div class="col-sm-3">
-        <input type="text" name="Email" id="Email" formControlName="emailid">
+        <input type="email" name="Email" id="Email" formControlName="emailid">
+        <div [hidden]='!(profileform.controls.emailid.invalid && (profileform.controls.emailid.touched || profileform.controls.emailid.dirty))'
+                  class="invalid-message">
+                    Should be a valid Email ID
+        </div>
       </div>
       <div class="col-sm-2">
-        <button type="submit" class="btn btn-warning btn-sm" click="VerifyEmail()">Verify Email</button>
+        <input type="button" class="btn btn-warning btn-sm" (click)="verifyEmail()" value="VERIFY EMAIL" [disabled]="!profileform.controls.emailid.value || profileform.controls.emailid.invalid">
       </div>
       
     </div>
@@ -65,7 +73,7 @@
   -->
   
     <div class="row">
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Update</button>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="profileform.invalid">Update</button>
     </div>  
   
 </form>
