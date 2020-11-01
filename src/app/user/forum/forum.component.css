@@ -1,0 +1,45 @@
+.row {
+    padding: 1rem;
+}
+
+.breadcrumb {
+    color: whitesmoke;
+    background-color: rgb(7, 94, 165);
+    font-weight: bold;
+}
+
+.btn {
+    color: blue;
+    background-color: white;
+}
+
+.card-header {
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.card-title {
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.card-body, .card-footer {
+    background-color: rgb(236, 236, 236);
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+#Role {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+.invalid-message {
+    color: red;
+}
