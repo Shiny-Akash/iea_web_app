@@ -1,0 +1,127 @@
+<h1 align="center"><em>RESOURCES</em></h1>
+
+<ul>
+<li><a (click)="toggle(); showCompletedProjects = true">Completed projects</a></li>
+<li><a>Placement materials</a>
+		<ul>
+			<li><a (click)="toggle(); showAptitude = true">Aptitude-R.S.Aggarwal</a></li>
+			<li><a (click)="toggle(); showCoreMaterials = true">Core materials</a></li>
+			<li><a (click)="toggle(); showProgramming = true">Programming materials</a></li>
+		</ul>
+</li>
+<li><a (click)="toggle(); showSyllabus = true">Syllabus</a></li>
+<li><a (click)='toggle(); showSubjectMaterials = true'>Subject materials</a></li>
+</ul>
+
+<div class="Completed projects" [hidden]="!showCompletedProjects">
+    <br><h3>coming soon ..............</h3>
+</div>
+
+<div class="Subject materials" [hidden]="!showSubjectMaterials">
+    <br><h3>coming soon ..............</h3>
+</div>
+
+<div class = "Syllabus" [hidden]="!showSyllabus">
+    <br><h2> SYLLABUS </h2>
+    <table style="width:50%">
+        <tr>
+        <th>Title</th>
+        <th>Link</th>
+        </tr>
+        <tr>
+        <td>Regulations-2015</td>
+        <td><a href="https://drive.google.com/file/d/1r8ZJSGWsR4J543X2lxOBeQk5bBVxvrlQ/view?usp=drivesdk">Syllabus</a></td>
+        </tr>
+        <tr>
+        <td>Regulations-2019</td>
+        <td><a href="https://drive.google.com/file/d/1r6fWQAyYn3oj5ql5DRys1MDkWS2KVAM_/view?usp=drivesdk">Syllabus</a></td>
+        </tr>
+    </table>
+</div>
+
+<div class = 'Placement materials'>
+    <div [hidden]="!showAptitude">
+    <br><h2> APTITUDE </h2>
+    <table style="width:50%">
+        <tr>
+        <th>Title</th>
+        <th>Link</th>
+        </tr>
+        <tr>
+        <td>Read and Test app</td>
+        <td><a href="https://www.indiabix.com/">Indiabix</a></td>
+        </tr>
+        <tr>
+        <td>Reading Purpose(offline app)</td>
+        <td><a href="https://play.google.com/store/apps/details?id=educationkeeda.rsquantsapti">R.S.Aggarwal</a></td>
+        </tr>
+        <tr>
+        <td>Test purpose only</td>
+        <td><a href="https://goo.gl/K4mpJ5">Aptitude test</a></td>
+        </tr>
+    </table>
+    </div>
+
+    <div [hidden]="!showProgramming">
+    <br><h2> PROGRAMMING </h2>
+    <table style="width:50%">
+        <tr>
+        <th>Title</th>
+        <th>Link</th>
+        </tr>
+        <tr>
+        <td>For learning(online)</td>
+        <td><a href="www.geeksforgeeks.org">Geeks-for-Geeks</a><br>
+        <a href="www.hackerrank.com">Hackerrank</a><br>
+        <a href="www.geeksforgeeks.org">Geeks-for-Geeks</a></td>
+        </tr>
+        <tr>
+        <td>Reading Purpose(online app)</td>
+        <td><a href="coursera.com">cousera</a><br>
+        <a href="www.sololearn.org">solo-learn</a><br>
+        <a href="www.hackerrank.com">Hackerrank</a></td>
+        </tr>
+        <tr>
+        <td>for examples and practice</td>
+        <td><a href="programiz.com">examples</a></td>
+        </tr>
+    </table>
+    </div>
+
+    <div [hidden]="!showCoreMaterials">
+    <br><h2> CORE MATERIALS </h2>
+    <table style="width:50%">
+        <tr>
+        <th>Title</th>
+        <th>Link</th>
+        </tr>
+        <tr>
+        <td>Transducers</td>
+        <td><a href="https://drive.google.com/file/d/1GPlnucgqvBOtXFENPu_ykBCRPiMHFtSg/view?usp=drivesdk">Transducers</a><br>
+        <a href="https://drive.google.com/file/d/1GX7RBEjlW0dACqgXezhhEZwPN1sf_VK7/view?usp=drivesdk">trans-2017</a><br>
+        <a href="https://drive.google.com/file/d/1GNszFPBpj3EYNjsGKOySe0ZjBa1HtZbZ/view?usp=drivesdk">trans-2016</a><br>
+        </td>
+        </tr>
+        <tr>
+        <td>ASP</td>
+        <td><a href="https://drive.google.com/file/d/1G3iccAauFDALiycZguBgz4usBCn1KDFV/view?usp=drivesdk">ASP</a><br>
+        <a href="https://drive.google.com/file/d/1G3kCSqa_hXOqXnQRcRvNme3yWFPdlRoR/view?usp=drivesdk">ASP-2017</a><br>
+        <a href="https://drive.google.com/file/d/1G4_9xuXvLKzVCiOfPHNXsM0JbMhvOz57/view?usp=drivesdk">ASP-2016</a><br>
+        </td>
+        </tr>
+        <tr>
+        <td>II</td>
+        <td><a href="https://drive.google.com/file/d/1GmFbcmzE9sXyizlNoSNuUymmZ_qFRLz5/view?usp=drivesdk">II</a><br>
+        <a href="https://drive.google.com/file/d/1H-NNbAR8DyOFEYDsv8p2bM7tQ5YiW8YC/view?usp=drivesdk">II2</a><br>
+        <a href="https://drive.google.com/file/d/1Gnvnq69tx7bpaIwZPTIUjoFwWEseqTuX/view?usp=drivesdk">II2</a><br>
+        </td>
+        </tr>
+        <td>Measurements</td>
+        <td><a href="https://drive.google.com/file/d/1GsA6lmW9VZ3GNvV2i-2qwSsyNWRo88Sn/view?usp=drivesdk">Measurements</a><br>
+        <a href="https://drive.google.com/file/d/1GRh_XUp4xlczE7GTpOtx89eTetAWEOdl/view?usp=drivesdk">Meas-2017</a><br>
+        <a href="https://drive.google.com/file/d/1Gkdzn15NgDioF9dFpIq7JLveQSnkhAXM/view?usp=drivesdk">Meas-2016</a><br>
+        </td>
+    </table>
+    </div>
+
+</div>

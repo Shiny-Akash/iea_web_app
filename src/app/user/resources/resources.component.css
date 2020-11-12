@@ -1,0 +1,35 @@
+ul{
+	margin:0px;
+	padding:0px;
+}
+ul li{
+	background-color:black;
+	width:250px;
+	height:30px;
+	line-height:30px;
+	float:left;
+	border:2px solid white;
+	text-align:center;
+}
+ul li a{
+	color:white;
+	text-decoration:none;
+	display:block;
+}
+ul li a:hover{
+	background-color:green;
+}
+ul li ul li{
+	display:none;
+}
+ul li:hover ul li{
+	display:block;
+}
+table,th,td{
+	border: 1px solid black;
+}
+th {
+  background-color:blue;
+  color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}

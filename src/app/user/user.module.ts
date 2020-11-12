@@ -8,10 +8,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ForumComponent } from './forum/forum.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ResourcesComponent } from './resources/resources.component';
 
 
 @NgModule({
-  declarations: [UserComponent, HeaderComponent, FooterComponent, ForumComponent, ProfileComponent],
+  declarations: [UserComponent, HeaderComponent, FooterComponent, ForumComponent, ProfileComponent, ResourcesComponent],
   imports: [
     CommonModule,
     FormsModule,
